@@ -1,0 +1,6 @@
+{
+  "name": "Threatora",
+  "description": "AI-Powered Web Threat Detection & Digital Trust Intelligence",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

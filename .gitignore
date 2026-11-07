@@ -1,0 +1,11 @@
+node_modules/
+.aistudio/
+mobile/.claude/
+mobile/AGENTS.md
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
