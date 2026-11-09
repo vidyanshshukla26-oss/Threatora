@@ -2,8 +2,6 @@
 
 Threatora is an AI-powered web threat detection and digital trust intelligence app. The web app and API use React, Vite, and Express. An Expo Go client is available in [`mobile/`](./mobile).
 
-# Threatora
-
 [![Live Demo](https://img.shields.io/badge/Demo-Live%20App-brightgreen?style=for-the-badge)](https://threatora-6lyr.onrender.com)
 
 [Threatora](https://threatora-6lyr.onrender.com) is an AI-powered web threat detection and digital trust intelligence app. The web app and API use React, Vite, and Express. An Expo Go client is available in [`mobile/`](./mobile).
