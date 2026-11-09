@@ -63,19 +63,22 @@ The goal is to make cybersecurity intelligence more accessible through AI-driven
 <!-- Add your actual screenshots inside the assets folder -->
 
 <p align="center">
-  <img src="assets/homepage.png" alt="Threatora Homepage" width="85%">
+  <img width="85%" alt="Screenshot 2026-11-09 134050" src="https://github.com/user-attachments/assets/cf413c07-54bc-44de-875b-d8060372d700" />
+
   <br>
   <em>Threatora Homepage</em>
 </p>
 
 <p align="center">
-  <img src="assets/scanner.png" alt="Threatora Scanning Interface" width="85%">
+  <img width="85%" alt="Screenshot 2026-11-09 134232" src="https://github.com/user-attachments/assets/f5436325-f22d-4dc6-a270-47748d25b744" />
+
   <br>
   <em>Website Threat Scanning Interface</em>
 </p>
 
 <p align="center">
-  <img src="assets/results.png" alt="Threatora Analysis Results" width="85%">
+  <img width="85%" alt="Screenshot 2026-11-09 134143" src="https://github.com/user-attachments/assets/74b7e02d-0ad1-4f6f-8ebb-278f6983bab2" />
+
   <br>
   <em>Threat Analysis Results</em>
 </p>
