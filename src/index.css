@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   
   code, pre, .font-mono {
@@ -12,29 +12,17 @@
   }
 }
 
-/* Subtle holographic cyber scanning line effect */
-@keyframes cyberScan {
-  0% { transform: translateY(-100%); opacity: 0; }
-  50% { opacity: 0.6; }
-  100% { transform: translateY(1000%); opacity: 0; }
-}
-
-.animate-cyber-scan {
-  animation: cyberScan 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-/* Custom dark scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #080b14;
+  background: #0b0e11;
 }
 ::-webkit-scrollbar-thumb {
-  background: #273449;
+  background: #303943;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b4b66;
+  background: #465361;
 }

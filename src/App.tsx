@@ -17,7 +17,7 @@ import { Search, X, Globe, MailWarning, ArrowRight } from 'lucide-react';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<string>('overview');
-  const [isLandingPage, setIsLandingPage] = useState<boolean>(false);
+  const [isLandingPage, setIsLandingPage] = useState<boolean>(true);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState<boolean>(false);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const [isGuardianOpen, setIsGuardianOpen] = useState<boolean>(false);
@@ -124,7 +124,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080B14] text-[#F8FAFC] flex flex-col font-sans transition-colors duration-200">
+    <div className="min-h-screen bg-[#0b0e11] text-slate-100 flex flex-col font-sans">
       {/* Universal Top Navigation Bar */}
       <Navbar
         currentTab={currentTab}
@@ -173,7 +173,6 @@ export default function App() {
                 onStartUrlScan={handleStartUrlScan}
                 onStartMessageScan={handleStartMessageScan}
                 history={history}
-                onOpenGuardianChat={() => setIsGuardianOpen(true)}
                 onSelectHistoryItem={handleSelectHistoryItem}
               />
             )}
@@ -241,16 +240,17 @@ export default function App() {
 
       {/* Global Quick Scan Modal */}
       {isQuickScanOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="w-full max-w-lg bg-[#0D1220] border border-[#273449] rounded-2xl p-5 shadow-2xl space-y-4">
-            <div className="flex items-center justify-between pb-2 border-b border-[#273449]">
+        <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
+          <div className="w-full max-w-lg bg-[#11161b] border border-[#303943] rounded-lg p-5 space-y-4">
+            <div className="flex items-center justify-between pb-2 border-b border-[#303943]">
               <div className="flex items-center gap-2">
-                <Search className="w-4 h-4 text-cyan-400" />
-                <h3 className="text-sm font-bold text-white">Universal Investigation Shortcut</h3>
+                <Search className="w-4 h-4 text-slate-400" />
+                <h3 className="text-sm font-medium text-white">Quick check</h3>
               </div>
               <button
                 onClick={() => setIsQuickScanOpen(false)}
                 className="text-slate-400 hover:text-white p-1"
+                aria-label="Close quick check"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -259,16 +259,16 @@ export default function App() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setQuickScanType('url')}
-                className={`px-3 py-1 rounded-lg text-xs font-semibold ${
-                  quickScanType === 'url' ? 'bg-violet-600 text-white' : 'bg-[#172033] text-slate-400'
+                className={`px-3 py-1.5 rounded text-xs font-medium ${
+                  quickScanType === 'url' ? 'bg-[#26364a] text-white' : 'text-slate-400 hover:text-white'
                 }`}
               >
                 URL / Domain
               </button>
               <button
                 onClick={() => setQuickScanType('message')}
-                className={`px-3 py-1 rounded-lg text-xs font-semibold ${
-                  quickScanType === 'message' ? 'bg-violet-600 text-white' : 'bg-[#172033] text-slate-400'
+                className={`px-3 py-1.5 rounded text-xs font-medium ${
+                  quickScanType === 'message' ? 'bg-[#26364a] text-white' : 'text-slate-400 hover:text-white'
                 }`}
               >
                 Message / SMS
@@ -276,11 +276,11 @@ export default function App() {
             </div>
 
             <form onSubmit={handleQuickScanSubmit} className="space-y-3">
-              <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-[#080B14] border border-[#273449] focus-within:border-cyan-500">
+              <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-md bg-[#0b0e11] border border-[#303943] focus-within:border-blue-500">
                 {quickScanType === 'url' ? (
-                  <Globe className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <Globe className="w-4 h-4 text-slate-500 shrink-0" />
                 ) : (
-                  <MailWarning className="w-4 h-4 text-amber-400 shrink-0" />
+                  <MailWarning className="w-4 h-4 text-slate-500 shrink-0" />
                 )}
                 <input
                   type="text"
@@ -288,7 +288,7 @@ export default function App() {
                   onChange={(e) => setQuickScanInput(e.target.value)}
                   placeholder={
                     quickScanType === 'url'
-                      ? 'Enter URL or domain (e.g. paypa1-verification.net)...'
+                      ? 'Enter a URL or domain'
                       : 'Paste suspicious message...'
                   }
                   autoFocus
@@ -300,13 +300,13 @@ export default function App() {
                 <button
                   type="button"
                   onClick={() => setIsQuickScanOpen(false)}
-                  className="px-3 py-1.5 rounded-lg bg-[#111827] text-xs text-slate-400 hover:text-white"
+                  className="px-3 py-1.5 rounded text-xs text-slate-400 hover:text-white"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-1.5 rounded-lg bg-gradient-to-r from-violet-600 to-cyan-500 text-white text-xs font-semibold flex items-center gap-1.5"
+                  className="px-4 py-1.5 rounded bg-blue-600 text-white text-xs font-medium flex items-center gap-1.5 hover:bg-blue-500"
                 >
                   <span>Investigate</span>
                   <ArrowRight className="w-3.5 h-3.5" />
