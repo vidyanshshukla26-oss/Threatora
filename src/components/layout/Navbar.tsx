@@ -73,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             onClick={() => {
               setIsLandingPage(!isLandingPage);
-              if (isLandingPage) onNavigate('overview');
+              if (isLandingPage) onNavigate(currentTab);
             }}
             className="h-8 rounded px-2.5 text-xs text-slate-400 transition-colors hover:text-white"
           >

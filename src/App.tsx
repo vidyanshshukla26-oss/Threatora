@@ -41,7 +41,6 @@ export default function App() {
     const params = new URLSearchParams(window.location.search);
     if (params.get('tab')) {
       setCurrentTab(params.get('tab')!);
-      setIsLandingPage(false);
     }
   }, []);
 
